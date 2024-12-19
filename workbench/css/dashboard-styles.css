@@ -1,0 +1,343 @@
+body{
+    background-attachment: fixed;
+    background-image: url("../img/d-bg.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+  }
+
+/* Styling the menu bar */
+/* Styling the menu bar */
+.menu-bar {
+    display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between menu items and profile */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, .4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(25px);   /* Example background color */
+  padding: 0px 20px;
+  border-radius: 50px;
+}
+
+.menu-bar li {
+    list-style: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 12px 16px;
+    margin: 0 8px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .menu-bar li::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: .3s;
+    border-radius: 25px;
+  }
+  
+  .menu-bar li:hover::before {
+    background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+    box-shadow: 0px 3px 20px 0px black;
+    transform: scale(1.2);
+  }
+  
+  .menu-bar li:hover {
+    color: black;
+  }
+/* Left side menu container */
+.menu-left {
+    display: flex;
+    align-items: center; /* Center the items vertically */
+}
+
+/* Styling the menu items */
+.menu-item {
+    position: relative; /* Needed for the dropdown positioning */
+}
+
+.menu-bar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    /* Spacing between menu items */
+}
+
+.menu-bar a li {
+    list-style: none;
+    font-size: 18px;
+}
+
+
+
+/* Subnavigation dropdown */
+.submenu {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%; /* Position right under the Work menu */
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(25px);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 150px; 
+    border-radius: 20px;
+    margin-top: 5px;/* Set a width */
+}
+
+.submenu li {
+    padding: 5px 20px;
+
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    color: rgb(18, 18, 18);
+}
+
+/* Show submenu on hover */
+.menu-item:hover .submenu {
+    display: block;
+     color: black;
+}
+
+/* Right side profile photo and name */
+.pa {
+    display: flex;
+    align-items: center;
+}
+
+.pa img {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    animation: bounce 1s ease-in-out;
+    margin-left: 10px; /* To separate photo from menu */
+}
+
+.pa p {
+    color: white;
+    margin-left: 10px; /* Spacing between photo and name */
+    font-size: 18px;
+}
+
+/* Optional: Bounce animation for the profile image */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.dashboard {
+    padding: 13px;
+    position: relative;
+    margin: 10px 0;
+    margin-top: 45px;
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+}
+
+p{
+    color: #fff;
+}
+
+/* Course Container */
+.course-container-dashboard {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+}
+
+/* Course Card */
+.course-card-dashboard {
+    background-color: transparent;
+    backdrop-filter: blur(35px);
+    color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(177, 177, 177, 0.208);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    flex: 1 1 calc(25% - 40px); /* Default to 4 columns on large screens */
+    max-width: calc(25% - 60px); /* Max width for 4 columns */
+    animation: fadeInCard 0.5s ease-in-out;
+}
+
+.course-card-dashboard img{
+  width: 230px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.course-card-dashboard h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.course-card-dashboard p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.course-card-dashboard .continue-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.course-card-dashboard .continue-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.course-card-dashboard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive Design */
+
+/* Tablets and small desktops (2 columns layout) */
+@media (max-width: 992px) {
+    .course-card-dashboard {
+        flex: 1 1 calc(50% - 40px); /* 2 cards per row */
+        max-width: calc(50% - 40px); /* Adjust width for 2 columns */
+    }
+    .dashboard h1 {
+        font-size: 2.5rem;
+        padding: 8px 16px;
+    }
+    .course-card-dashboard img{
+        width: 230px;
+      height: auto;
+}
+
+/* Mobile devices (1 column layout) */
+@media (max-width: 768px) {
+    .course-card-dashboard {
+        flex: 1 1 100%; /* Single card per row */
+        max-width: 100%; /* Full width on mobile */
+    }
+    .dashboard h2 {
+        font-size: 2rem;
+        padding: 6px 12px;
+    }
+    .course-container-dashboard {
+        justify-content: center; /* Center items on small screens */
+    }
+}
+
+/* Small mobile devices (phones) */
+@media (max-width: 480px) {
+    .course-card-dashboard h3 {
+        font-size: 1.2rem;
+    }
+    .course-card-dashboard p {
+        font-size: 0.9rem;
+    }
+    .continue-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+
+
+/* Responsive layout for tablet and smaller */
+@media (max-width: 768px) { 
+    .menu-bar {
+
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        list-style: none;
+     
+    }
+
+    .menu-left {
+        flex: 1;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 15px;
+    }
+
+    /* Hide profile image and name on smaller screens */
+    .pa {
+        display: none;
+    }
+
+    /* Hide logo on tablet and mobile */
+    .logo {
+        display: none;
+    }
+
+    .dashboard h2 {
+        font-size: 2rem;
+        padding: 6px 12px;
+    }
+
+    .course-card-dashboard {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Mobile-specific layout */
+@media (max-width: 480px) { 
+    .menu-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; 
+        padding: 15px;/* Ensure single line layout */
+    }
+
+    .menu-left li {
+        font-size: 14px;
+        padding: 1px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+    .dashboard h2 {
+        font-size: 1.5rem;
+        padding: 8px 8px;
+    }
+}
+}

@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    background-image: url("../../../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+  }
+
+.form-container {
+    background-color: transparent;
+    border: 2px solid rgba(108, 108, 108, 0.163);
+    padding: 20px;
+    border-radius: 8px;
+    color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    backdrop-filter: blur(35px);
+    width: 100%;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.input-group {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+}
+
+.input-group input, .input-group textarea {
+    padding: 10px;
+    border: 1px solid #8e8e8ece;
+    color: #a78e00;
+    background-color: transparent;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input-group textarea {
+    resize: vertical;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 100%;
+}
+
+.actions input, .actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.actions input[type="submit"] {
+    background-color: #3a1074;
+    color: white;
+}
+
+.actions input[type="reset"] {
+    background-color: #570000;
+    color: white;
+}
+
+.actions button {
+    background-color: #456300bf;
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .form-title {
+        margin-top: 100px;
+    }
+  }

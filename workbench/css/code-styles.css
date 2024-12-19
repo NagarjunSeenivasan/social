@@ -1,0 +1,228 @@
+body{
+    background-attachment: fixed;
+    background-image: url("../img/d-bg.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+  }
+
+/* Styling the menu bar */
+/* Styling the menu bar */
+.menu-bar {
+    display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between menu items and profile */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, .4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(25px);   /* Example background color */
+  padding: 0px 20px;
+  border-radius: 50px;
+}
+
+.menu-bar li {
+    list-style: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 12px 16px;
+    margin: 0 8px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .menu-bar li::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: .2s;
+    border-radius: 25px;
+  }
+  
+  .menu-bar li:hover::before {
+    background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+    box-shadow: 0px 3px 20px 0px black;
+    transform: scale(1.2);
+  }
+  
+  .menu-bar li:hover {
+    color: black;
+  }
+/* Left side menu container */
+.menu-left {
+    display: flex;
+    align-items: center; /* Center the items vertically */
+}
+
+/* Styling the menu items */
+.menu-item {
+    position: relative; /* Needed for the dropdown positioning */
+}
+
+.menu-bar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    /* Spacing between menu items */
+}
+
+.menu-bar a li {
+    list-style: none;
+    font-size: 18px;
+}
+
+
+
+/* Subnavigation dropdown */
+.submenu {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%; /* Position right under the Work menu */
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(25px);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 150px; 
+    border-radius: 20px;
+    margin-top: 5px;/* Set a width */
+}
+
+.submenu li {
+    padding: 5px 20px;
+
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    color: rgb(18, 18, 18);
+}
+
+/* Show submenu on hover */
+.menu-item:hover .submenu {
+    display: block;
+     color: black;
+}
+
+/* Right side profile photo and name */
+.pa {
+    display: flex;
+    align-items: center;
+}
+
+.pa img {
+    border-radius: 50%;
+    width: 58px;
+    height: 48px;
+    object-fit: cover;
+    animation: bounce 1s ease-in-out;
+    margin-left: 10px; /* To separate photo from menu */
+}
+
+.pa p {
+    color: white;
+    margin-left: 10px; /* Spacing between photo and name */
+    font-size: 18px;
+}
+
+/* Optional: Bounce animation for the profile image */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* Compiler Section Styling */
+.compiler {
+    width: 100%;
+    height: 700px;
+    border: none; /* Centering the iframe */
+    padding: 20px 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* For responsive layouts */
+@media (max-width: 992px) {
+    .compiler {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .compiler {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .compiler {
+        height: 750px;
+    }
+}
+
+
+/* Responsive layout for tablet and smaller */
+@media (max-width: 768px) { 
+    .menu-bar {
+
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        list-style: none;
+     
+    }
+
+    .menu-left {
+        flex: 1;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 15px;
+    }
+
+    /* Hide profile image and name on smaller screens */
+    .pa {
+        display: none;
+    }
+
+    /* Hide logo on tablet and mobile */
+    .logo {
+        display: none;
+    }
+}
+
+/* Mobile-specific layout */
+@media (max-width: 480px) { 
+    .menu-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px; /* Ensure single line layout */
+    }
+
+    .menu-left li {
+        font-size: 14px;
+        padding: 1px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Registration</title>
+    <link rel="stylesheet" href="assets/background/css/staff.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Staff Registration</h2>
+        <form action="staff.php" method="post" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="input-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="input-group">
+                <label for="phone_number">Phone Number</label>
+                <input type="text" id="phone_number" name="phone_number" required>
+            </div>
+            <div class="input-group">
+                <label for="photo">Upload Photo</label>
+                <input type="file" id="photo" name="photo" required>
+            </div>
+            <div class="input-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="institution">Institution</label>
+                <input type="text" id="institution" name="institution" required>
+            </div>
+            <div class="input-group">
+                <label for="aadhar_number">Aadhar Number</label>
+                <input type="text" id="aadhar_number" name="aadhar_number" required>
+            </div>
+            <div class="input-group">
+                <label for="account_number">Account Number</label>
+                <input type="text" id="account_number" name="account_number" required>
+            </div>
+            <div class="input-group">
+                <label for="account_holder_name">Account Holder Name</label>
+                <input type="text" id="account_holder_name" name="account_holder_name" required>
+            </div>
+            <div class="input-group">
+                <label for="ifsc_code">IFSC Code</label>
+                <input type="text" id="ifsc_code" name="ifsc_code" required>
+            </div>
+            <div class="input-group">
+                <label for="branch_name">Branch Name</label>
+                <input type="text" id="branch_name" name="branch_name" required>
+            </div>
+            <div class="input-group">
+                <label for="bank_name">Bank Name</label>
+                <input type="text" id="bank_name" name="bank_name" required>
+            </div>
+            <div class="input-group actions">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

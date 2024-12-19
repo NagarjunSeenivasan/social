@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .captcha-code {
+            font-size: 24px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .captcha-refresh {
+            cursor: pointer;
+            font-size: 18px;
+            color: #007BFF;
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Admin Login</h1>
+    <form action="admin-login.php" method="POST" onsubmit="return validateCaptcha();">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-group captcha-container">
+            <span id="captchaCode" class="captcha-code"></span>
+            <span class="captcha-refresh" onclick="generateCaptcha();">↻</span>
+        </div>
+        <div class="input-group">
+            <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required>
+        </div>
+        <button type="submit" class="submit-btn">Login</button>
+    </form>
+</div>
+
+<script>
+    // Function to generate a random CAPTCHA code
+    function generateCaptcha() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let captchaCode = '';
+        for (let i = 0; i < 6; i++) {
+            captchaCode += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        document.getElementById('captchaCode').textContent = captchaCode;
+    }
+
+    // Function to validate the CAPTCHA input
+    function validateCaptcha() {
+        const input = document.getElementById('captchaInput').value;
+        const captchaCode = document.getElementById('captchaCode').textContent;
+
+        if (input === captchaCode) {
+            return true; // Form will be submitted
+        } else {
+            alert('Invalid CAPTCHA. Please try again.');
+            generateCaptcha(); // Generate a new CAPTCHA
+            return false; // Prevent form submission
+        }
+    }
+
+    // Generate a CAPTCHA code when the page loads
+    window.onload = generateCaptcha;
+</script>
+
+</body>
+</html>

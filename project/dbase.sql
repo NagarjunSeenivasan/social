@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS cadibel;
+USE cadibel;
+
+CREATE TABLE IF NOT EXISTS uploaded_files (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    file_name VARCHAR(255) NOT NULL,
+    file_path VARCHAR(255) NOT NULL,
+    background_img_path VARCHAR(255) NOT NULL,
+    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
